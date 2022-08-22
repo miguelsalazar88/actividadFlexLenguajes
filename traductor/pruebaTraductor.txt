@@ -1,0 +1,10 @@
+house
+car
+plane
+dog
+man
+woman
+basket
+ball
+friend
+movie
