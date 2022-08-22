@@ -1,5 +1,5 @@
-/* Escriba un programa en LEX, que permita hacer un simple traductor de ingles a español. */
-/* Considere por lo menos 10 palabras. */
+/* Escriba un programa en LEX, que permita reconocer los números, */
+/* los símbolos y los caracteres de una calculadora. */
 
 /* Seccion de opciones */
 /* Le indica a flex que solo lea un archivo de entrada */
@@ -12,7 +12,6 @@
     #include <stdlib.h>
     #include <string.h>
     FILE *yyin;
-    int vida1=100, vida2 = 100;
 %}
 
 RESTA           ["\-"]

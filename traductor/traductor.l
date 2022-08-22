@@ -12,7 +12,6 @@
     #include <stdlib.h>
     #include <string.h>
     FILE *yyin;
-    int vida1=100, vida2 = 100;
 %}
 
 CASA        "house"
