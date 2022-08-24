@@ -20,14 +20,22 @@ SUMA            ["+"]
 MULTIPLICACION  ["*"]
 DIVISION        ["/"]
 DECIMAL         ["."]
+SQRT            ["sqrt("]
+POW             ["pow("]
+PAR_DER         [")"]
+COMA            [","]
+INVALIDO        [A-Za-z]
 %%
 
-{RESTA}                         {printf("Resta (%s)\n", yytext);}
-{DIGITOS}+                      {printf("Numero (%s)\n", yytext);}
-{DIGITOS}+{DECIMAL}{DIGITOS}    {printf("Numero con Decimales (%s)\n", yytext);}
-{SUMA}                          {printf("Suma (%s)\n", yytext);}
-{MULTIPLICACION}                {printf("Multiplicacion (%s)\n", yytext);}
-{DIVISION}                      {printf("Division (%s)\n", yytext);}
+{RESTA}                                                                     {printf("Resta (%s)\n", yytext);}
+{DIGITOS}+                                                                  {printf("Numero (%s)\n", yytext);}
+{DIGITOS}+{DECIMAL}{DIGITOS}                                                {printf("Numero con Decimales (%s)\n", yytext);}
+{SUMA}                                                                      {printf("Suma (%s)\n", yytext);}
+{MULTIPLICACION}                                                            {printf("Multiplicacion (%s)\n", yytext);}
+{DIVISION}                                                                  {printf("Division (%s)\n", yytext);}
+{SQRT}+({DIGITOS}|{DIGITOS}+{DECIMAL}{DIGITOS})+{PAR_DER}                   {printf("Raiz Cuadrada (%s)\n", yytext);}
+{POW}+({DIGITOS}|{DIGITOS}+{DECIMAL}{DIGITOS})+{COMA}+{DIGITOS}+{PAR_DER}  {printf("Exponencial (%s)\n", yytext);}
+{INVALIDO}                                                                  {printf("Caracter (%s) Inválido\n",yytext);}
 
 %%
 

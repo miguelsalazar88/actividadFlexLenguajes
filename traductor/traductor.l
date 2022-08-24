@@ -36,7 +36,8 @@ PELICULA    "movie"
 {PELOTA}        {printf("(%s) significa pelota",yytext);}  
 {AMIGO}         {printf("(%s) significa amigo",yytext);}  
 {PELICULA}      {printf("(%s) significa pelicula",yytext);}
-{CANASTO}       {printf("(%s) significa canasto",yytext);}   
+{CANASTO}       {printf("(%s) significa canasto",yytext);}
+.*              {printf("(%s) es una plabra inválida",yytext);}
 
 %%
 
