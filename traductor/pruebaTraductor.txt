@@ -9,3 +9,5 @@ ball
 friend
 movie
 hola
+mi casita
+$
